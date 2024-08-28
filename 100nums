@@ -1,0 +1,12 @@
+import random
+from decimal import Decimal, getcontext
+
+# Устанавливаем точность
+getcontext().prec = 100
+
+# Генерируем список чисел в диапазоне с 10 знаками после запятой
+random_numbers = [Decimal(random.uniform(0.000001, 0.00000757237)).quantize(Decimal('0.0000000001')) for _ in range(100)]
+
+# Выводим числа в столбик
+for number in random_numbers:
+    print(number)
